@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Basic computer science principles explained in plain language." />
+  <title>Basic CS Principles</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="vine vine-left">⌁<br>│<br>├─❧<br>│<br>╰─❧</div>
+  <div class="vine vine-right">❧─╮<br>│<br>❧─┤<br>│<br>⌁</div>
+
+  <header class="hero">
+    <p class="eyebrow">COMPUTER SCIENCE // FROM ZERO</p>
+    <h1>Basic CS Principles</h1>
+    <p class="subtitle">
+      The version I actually want to remember: plain language, small examples,
+      and enough detail to understand what the computer is doing.
+    </p>
+  </header>
+
+  <main>
+    <nav class="topic-nav" aria-label="Topics">
+      <a href="#recursion">Recursion</a>
+      <a href="#hashmaps">Hash Maps</a>
+      <a href="#search">BFS / DFS</a>
+      <a href="#cnn">CNNs</a>
+      <a href="#np">NP-Hard / NP-Complete</a>
+      <a href="#i2c">I²C</a>
+    </nav>
+
+    <section id="recursion" class="card featured">
+      <div class="section-heading">
+        <div>
+          <p class="number">01</p>
+          <h2>Recursion + Base Case</h2>
+        </div>
+        <span class="tag">function → itself</span>
+      </div>
+
+      <p>
+        <strong>Recursion</strong> is when a function calls itself with a smaller version
+        of the same problem. A <strong>base case</strong> is the stopping condition.
+      </p>
+
+      <div class="memory-line">
+        recursion = function calls itself // base case = where it stops
+      </div>
+
+      <div class="two-column">
+        <div class="mini-panel">
+          <h3>Example</h3>
+          <pre><code>factorial(5)
+= 5 * factorial(4)
+= 5 * 4 * factorial(3)
+= 5 * 4 * 3 * factorial(2)
+= 5 * 4 * 3 * 2 * factorial(1)
+
+factorial(1) = BASE CASE</code></pre>
+        </div>
+
+        <div class="mini-panel">
+          <h3>What happens</h3>
+          <ol>
+            <li>The function receives a problem.</li>
+            <li>It calls itself with a smaller problem.</li>
+            <li>It eventually reaches the base case.</li>
+            <li>The answers return back up through the earlier calls.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="script-bar">
+        <div>
+          <strong>PowerShell recursion demo</strong>
+          <span>The saved GUI version with the dark green plant theme.</span>
+        </div>
+        <a class="button" href="recursion-demo.ps1" download>Download .ps1</a>
+      </div>
+
+      <details>
+        <summary>View the PowerShell script</summary>
+        <pre class="code-block"><code id="powershell-code">Loading script...</code></pre>
+      </details>
+    </section>
+
+    <section id="hashmaps" class="card">
+      <div class="section-heading">
+        <div>
+          <p class="number">02</p>
+          <h2>Hash Maps</h2>
+        </div>
+        <span class="tag">key → value</span>
+      </div>
+
+      <p>
+        A <strong>hash map</strong> stores a value under a key. A hash function turns
+        the key into a location so the computer can usually jump close to the answer
+        instead of searching every item one by one.
+      </p>
+
+      <pre><code>"Ti" → hash function → location 27 → phone number</code></pre>
+
+      <p class="remember">
+        Remember it like lockers: instead of checking every locker, the key tells you
+        which locker to go to.
+      </p>
+    </section>
+
+    <section id="search" class="card">
+      <div class="section-heading">
+        <div>
+          <p class="number">03</p>
+          <h2>BFS vs. DFS</h2>
+        </div>
+        <span class="tag">wide vs. deep</span>
+      </div>
+
+      <div class="two-column">
+        <div class="mini-panel">
+          <h3>Breadth-First Search</h3>
+          <p>Searches level by level. It checks nearby choices before going deeper.</p>
+          <pre><code>A → B → C → D → E → F</code></pre>
+          <p><strong>Think:</strong> search wide first.</p>
+        </div>
+
+        <div class="mini-panel">
+          <h3>Depth-First Search</h3>
+          <p>Follows one path as far as possible, then backs up and tries another.</p>
+          <pre><code>A → B → D → E → C → F</code></pre>
+          <p><strong>Think:</strong> search deep first.</p>
+        </div>
+      </div>
+
+      <p class="remember">
+        Maze version: BFS checks every nearby hallway. DFS picks one hallway and keeps going.
+      </p>
+    </section>
+
+    <section id="cnn" class="card">
+      <div class="section-heading">
+        <div>
+          <p class="number">04</p>
+          <h2>Convolutional Neural Networks</h2>
+        </div>
+        <span class="tag">pixels → patterns</span>
+      </div>
+
+      <p>
+        A <strong>CNN</strong> is a neural network that is especially useful for images.
+        Small learned filters slide across an image looking for patterns.
+      </p>
+
+      <div class="flow">
+        <span>pixels</span><b>→</b><span>edges</span><b>→</b><span>shapes</span><b>→</b><span>objects</span>
+      </div>
+
+      <p>
+        It is efficient because the same learned filter can be reused across the whole
+        image instead of learning a completely separate rule for every pixel location.
+      </p>
+
+      <p class="remember">
+        A tensor is the data structure holding the image numbers. The important CNN idea
+        is the reusable filter sliding across those numbers.
+      </p>
+    </section>
+
+    <section id="np" class="card">
+      <div class="section-heading">
+        <div>
+          <p class="number">05</p>
+          <h2>NP-Hard vs. NP-Complete</h2>
+        </div>
+        <span class="tag">difficulty classes</span>
+      </div>
+
+      <div class="definition-stack">
+        <p><strong>NP:</strong> if someone gives you a proposed answer, you can check it efficiently.</p>
+        <p><strong>NP-hard:</strong> at least as hard as the hardest problems in NP.</p>
+        <p><strong>NP-complete:</strong> both NP <em>and</em> NP-hard.</p>
+      </div>
+
+      <div class="memory-line">NP-complete = NP + NP-hard</div>
+
+      <p class="remember">
+        Sudoku idea: finding a solution can be hard, but checking a completed board is much easier.
+      </p>
+    </section>
+
+    <section id="i2c" class="card">
+      <div class="section-heading">
+        <div>
+          <p class="number">06</p>
+          <h2>I²C + Arduino</h2>
+        </div>
+        <span class="tag">device communication</span>
+      </div>
+
+      <p>
+        <strong>I²C</strong> is a communication system that lets a controller such as an
+        Arduino talk to sensors, displays, accelerometers, clocks, and other devices.
+      </p>
+
+      <div class="two-column">
+        <div class="mini-panel">
+          <h3>SDA</h3>
+          <p><strong>Serial Data</strong></p>
+          <p>The actual information being sent.</p>
+        </div>
+        <div class="mini-panel">
+          <h3>SCL</h3>
+          <p><strong>Serial Clock</strong></p>
+          <p>The timing that keeps communication synchronized.</p>
+        </div>
+      </div>
+
+      <pre><code>Arduino
+  ├── 0x3C → OLED display
+  ├── 0x48 → temperature sensor
+  └── 0x68 → accelerometer</code></pre>
+
+      <p class="remember">
+        SDA = what is being said // SCL = when it is being said // address = which device.
+      </p>
+    </section>
+
+    <section class="cheat-sheet">
+      <p class="eyebrow">30 SECOND REVIEW</p>
+      <h2>The part worth memorizing</h2>
+
+      <div class="cheat-grid">
+        <div><strong>Recursion</strong><span>function calls itself</span></div>
+        <div><strong>Base Case</strong><span>where recursion stops</span></div>
+        <div><strong>Hash Map</strong><span>key → hash → value</span></div>
+        <div><strong>BFS</strong><span>wide / level by level</span></div>
+        <div><strong>DFS</strong><span>deep / one path first</span></div>
+        <div><strong>CNN</strong><span>filters find image patterns</span></div>
+        <div><strong>NP-hard</strong><span>at least as hard as NP's hardest</span></div>
+        <div><strong>NP-complete</strong><span>NP + NP-hard</span></div>
+        <div><strong>I²C</strong><span>SDA data + SCL clock</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>basic cs principles</span>
+    <span>// built to be understandable first</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
